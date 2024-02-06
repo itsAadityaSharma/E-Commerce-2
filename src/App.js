@@ -1,4 +1,4 @@
-//42:34:00
+//52:00:00
 import React from "react";
 import "./App.css";
 import Home from "./pages/Home";
@@ -11,6 +11,7 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import CartPage from "./pages/CartPage.js";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignUpPage></SignUpPage>,
+  },
+  {
+    path: "/cart",
+    element: <CartPage></CartPage>,
   },
 ]);
 
