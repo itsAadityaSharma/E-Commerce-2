@@ -1,4 +1,4 @@
-//52:00:00
+//1:10:00
 import React from "react";
 import "./App.css";
 import Home from "./pages/Home";
