@@ -18,6 +18,10 @@ export const fetchProductsByFiltersAsync = createAsyncThunk(
   "product/fetchProductsByFilters",
   async (filter) => {
     const response = await fetchProductsByFilters(filter);
+    if (filter.order === "desc") {
+      const descData = response.data;
+      return descData.reverse();
+    }
     return response.data;
   }
 );
