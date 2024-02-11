@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { fetchAllProducts, fetchProductsByFilters } from "./ProductAPI";
 
 const initialState = {
+  total_Items: 0,
   products: [],
   status: "idle",
 };
@@ -16,11 +17,10 @@ export const fetchAllProductsAsync = createAsyncThunk(
 
 export const fetchProductsByFiltersAsync = createAsyncThunk(
   "product/fetchProductsByFilters",
-  async (filter) => {
-    const response = await fetchProductsByFilters(filter);
-    if (filter.order === "desc") {
-      const descData = response.data;
-      return descData.reverse();
+  async ({ filter, sort, pagination }) => {
+    const response = await fetchProductsByFilters(filter, sort, pagination);
+    if (sort.order == "desc") {
+      response.data.data.reverse();
     }
     return response.data;
   }
@@ -48,7 +48,9 @@ export const ProductSlice = createSlice({
       })
       .addCase(fetchProductsByFiltersAsync.fulfilled, (state, action) => {
         state.status = "idle";
-        state.products = action.payload;
+        state.products = action.payload.data;
+        state.total_Items = action.payload.items;
+        console.log("TotalItem :: " + action.payload.items);
       });
   },
 });
@@ -56,5 +58,6 @@ export const ProductSlice = createSlice({
 export const { increment } = ProductSlice.actions;
 
 export const selectAllProducts = (state) => state.product.products;
+export const total_Items = (state) => state.product.total_Items;
 
 export default ProductSlice.reducer;
