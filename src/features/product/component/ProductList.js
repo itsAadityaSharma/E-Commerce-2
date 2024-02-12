@@ -28,6 +28,7 @@ const sortOptions = [
     name: "Price: Low to High",
     sort: "price",
     order: "asc",
+
     current: false,
   },
   {
@@ -314,6 +315,10 @@ export default function ProductList() {
     const pagination = { _page: page };
     dispatch(fetchProductsByFiltersAsync({ filter, sort, pagination }));
   }, [dispatch, filter, sort, page]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [total_Items1, sort]);
 
   return (
     <div>
@@ -623,8 +628,13 @@ function Pagination({ page, handlePage, totalItems }) {
             <span className="font-medium">
               {(page - 1) * ITEMS_PER_PAGE + 1}
             </span>{" "}
-            to <span className="font-medium">{page * ITEMS_PER_PAGE}</span> of{" "}
-            <span className="font-medium">{totalItems}</span> results
+            to{" "}
+            <span className="font-medium">
+              {page * ITEMS_PER_PAGE > totalItems
+                ? totalItems
+                : page * ITEMS_PER_PAGE}
+            </span>{" "}
+            of <span className="font-medium">{totalItems}</span> results
           </p>
         </div>
         <div>
