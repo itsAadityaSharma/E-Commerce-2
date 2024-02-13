@@ -1,4 +1,4 @@
-//2:23:00
+//2:54:00
 import React from "react";
 import "./App.css";
 import Home from "./pages/Home";
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
     element: <Checkout></Checkout>,
   },
   {
-    path: "/product-detail",
+    path: "/product-detail/:id",
     element: <ProductDetailPage></ProductDetailPage>,
   },
 ]);
