@@ -2307,5 +2307,17 @@
       "label": "lighting",
       "checked": false
     }
+  ],
+  "users": [
+    {
+      "id": "5820",
+      "email": "gg@gmail.com",
+      "password": "Aaditya12@"
+    },
+    {
+      "id": "dbdf",
+      "email": "saaditya940@gmail.com",
+      "password": "Aaditya12@"
+    }
   ]
 }
