@@ -1,4 +1,4 @@
-//3:08:00
+//3:22:00
 import React from "react";
 import "./App.css";
 import Home from "./pages/Home";
@@ -14,11 +14,16 @@ import {
 import CartPage from "./pages/CartPage.js";
 import Checkout from "./pages/Checkout.js";
 import ProductDetailPage from "./pages/ProductDetailPage.js";
+import Protected from "./features/auth/components/Protected.js";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home></Home>,
+    element: (
+      <Protected>
+        <Home></Home>
+      </Protected>
+    ),
   },
   {
     path: "/login",
@@ -30,15 +35,27 @@ const router = createBrowserRouter([
   },
   {
     path: "/cart",
-    element: <CartPage></CartPage>,
+    element: (
+      <Protected>
+        <CartPage></CartPage>
+      </Protected>
+    ),
   },
   {
     path: "/checkout",
-    element: <Checkout></Checkout>,
+    element: (
+      <Protected>
+        <Checkout></Checkout>
+      </Protected>
+    ),
   },
   {
     path: "/product-detail/:id",
-    element: <ProductDetailPage></ProductDetailPage>,
+    element: (
+      <Protected>
+        <Protected></Protected>
+      </Protected>
+    ),
   },
 ]);
 
