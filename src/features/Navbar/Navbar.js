@@ -8,6 +8,8 @@ import {
 } from "@heroicons/react/24/outline";
 
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectCartProduct } from "../cart/CartSlice";
 
 const user = {
   name: "Tom Cook",
@@ -30,6 +32,7 @@ function classNames(...classes) {
 }
 
 const Navbar = ({ children }) => {
+  const items = useSelector(selectCartProduct);
   return (
     <div>
       <div className="min-h-full">
@@ -76,9 +79,11 @@ const Navbar = ({ children }) => {
                           className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                         >
                           <span className="absolute -inset-1.5" />
-                          <span className="inline-flex items-center rounded-md ml-3 bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
-                            0
-                          </span>
+                          {items.length > 0 && (
+                            <span className="inline-flex items-center rounded-md ml-3 bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+                              {items.length}
+                            </span>
+                          )}
                           <ShoppingCartIcon
                             className="h-6 w-6"
                             aria-hidden="true"
@@ -192,9 +197,11 @@ const Navbar = ({ children }) => {
                         className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                       >
                         <span className="absolute -inset-1.5" />
-                        <span className="inline-flex items-center rounded-md ml-3 bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
-                          0
-                        </span>
+                        {items.length > 0 && (
+                          <span className="inline-flex items-center rounded-md ml-3 bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+                            {items.length}
+                          </span>
+                        )}
                         <ShoppingCartIcon
                           className="h-6 w-6"
                           aria-hidden="true"
