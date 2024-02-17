@@ -15,7 +15,11 @@ import {
   selectLoggedInUser,
   updateUserAsync,
 } from "../features/auth/AuthSlice";
-import { createOrderAsync } from "../features/order/orderSlice";
+import {
+  createOrderAsync,
+  selectCurrentOrder,
+  selectCurrentOrderStatus,
+} from "../features/order/orderSlice";
 
 const Checkout = () => {
   const dispatch = useDispatch();
@@ -32,6 +36,7 @@ const Checkout = () => {
 
   const [open, setOpen] = useState(true);
   const products = useSelector(selectCartProduct);
+  const currentOrder = useSelector(selectCurrentOrder);
   const totalAmount = products.reduce(
     (amount, item) => item.price * item.quantity + amount,
     0
@@ -58,6 +63,7 @@ const Checkout = () => {
       user,
       paymentMethod,
       selectedAddress,
+      status: "pending", //other status can be delivered, received
     };
     dispatch(createOrderAsync(order));
     //TODO:redirect to order-success page
@@ -78,6 +84,12 @@ const Checkout = () => {
   return (
     <>
       {products.length === 0 && <Navigate to="/" replace={true}></Navigate>}
+      {currentOrder && (
+        <Navigate
+          to={`/order-success/${currentOrder.id}`}
+          replace={true}
+        ></Navigate>
+      )}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5 text-left">
           <div className="lg:col-span-3">

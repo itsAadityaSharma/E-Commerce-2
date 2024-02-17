@@ -3,6 +3,7 @@ import {
   addToCart,
   deleteCartItem,
   fetchItemByUserId,
+  resetCart,
   updateCart,
 } from "./CartAPI";
 
@@ -38,6 +39,13 @@ export const updateCartByIdAsync = createAsyncThunk(
   "cart/updateCart",
   async (update) => {
     const response = await updateCart(update);
+    return response.data;
+  }
+);
+export const resetCartAsync = createAsyncThunk(
+  "cart/resetCart",
+  async (userId) => {
+    const response = await resetCart(userId);
     return response.data;
   }
 );
@@ -84,6 +92,13 @@ export const cartSlice = createSlice({
           (item) => item.id === action.payload.id
         );
         state.products[index] = action.payload;
+      })
+      .addCase(resetCartAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(resetCartAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.item = [];
       });
   },
 });

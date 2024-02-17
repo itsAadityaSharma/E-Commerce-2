@@ -1,4 +1,4 @@
-//4:19:00
+//4:38:00
 import React, { useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home";
@@ -23,6 +23,8 @@ import {
   selectCartProduct,
   selectLatestItems,
 } from "./features/cart/CartSlice.js";
+import PageNotFound from "./pages/404.js";
+import OrderSuccessPage from "./pages/order-success.js";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +66,14 @@ const router = createBrowserRouter([
         <ProductDetailPage></ProductDetailPage>
       </Protected>
     ),
+  },
+  {
+    path: "*",
+    element: <PageNotFound></PageNotFound>,
+  },
+  {
+    path: "/order-success/:id",
+    element: <OrderSuccessPage></OrderSuccessPage>,
   },
 ]);
 

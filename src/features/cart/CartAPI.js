@@ -41,3 +41,17 @@ export function fetchItemByUserId(id) {
     resolve({ data });
   });
 }
+
+export async function resetCart(userId) {
+  //get all the items and then delete
+  return new Promise(async (resolve) => {
+    const response = await fetchItemByUserId(userId);
+    const items = response.data;
+    // console.log(items);
+    for (let item of items) {
+      console.log("Item:" + item.id);
+      await deleteCartItem(item.id);
+    }
+    resolve({ status: "success" });
+  });
+}
