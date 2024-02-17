@@ -60,6 +60,9 @@ const Checkout = () => {
       selectedAddress,
     };
     dispatch(createOrderAsync(order));
+    //TODO:redirect to order-success page
+    //TODO:clear cart after order
+    //TODO : on server change the stock number of items
   };
 
   const handleQuantity = (e, product) => {
@@ -435,7 +438,7 @@ const Checkout = () => {
                   <div className="mt-6">
                     <div
                       onClick={handleOrder}
-                      className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                      className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                     >
                       Order and Pay
                     </div>
