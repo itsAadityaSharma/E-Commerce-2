@@ -25,6 +25,10 @@ import {
 } from "./features/cart/CartSlice.js";
 import PageNotFound from "./pages/404.js";
 import OrderSuccessPage from "./pages/order-success.js";
+import UserOrder from "./features/user/components/UserOrder.js";
+import UserOrderPage from "./pages/UserOrderPage.js";
+import { UserProfile } from "./features/user/components/UserProfile.js";
+import UrseProfilePage from "./pages/UrseProfilePage.js";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +70,14 @@ const router = createBrowserRouter([
         <ProductDetailPage></ProductDetailPage>
       </Protected>
     ),
+  },
+  {
+    path: "/orders",
+    element: <UserOrderPage></UserOrderPage>,
+  },
+  {
+    path: "/profile",
+    element: <UrseProfilePage></UrseProfilePage>,
   },
   {
     path: "*",
