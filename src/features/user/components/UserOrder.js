@@ -24,7 +24,7 @@ const UserOrder = () => {
             <div className="mx-auto mt-24 bg-white max-w-7xl px-4 sm:px-6 lg:px-8">
               <h1 className="text-4xl font-bold tracking-tight text-left text-gray-900">
                 Order Id : {order.id}
-              </h1>{" "}
+              </h1>
               <h3 className="text-xl font-bold tracking-tight text-left text-red-900">
                 Order status : {order.status}
               </h3>

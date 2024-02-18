@@ -2436,18 +2436,18 @@
           "name": "Pankaj  Sharma",
           "email": "p@gmail.com",
           "phone": "45678",
-          "street": "Chabadia road, Adarsh nagar ,sardhana ,meerut ,uttar pradesh",
+          "street": "Chabadia road, Adarsh nagar ",
           "city": "Meerut",
           "state": "Uttar Pradesh",
           "pincode": "250342"
         },
         {
-          "name": "aadihsdsuihsiuh",
-          "email": "sbaxjhasjxbajxbjasbx",
-          "phone": "habssjbsjhbas",
+          "name": "Sanket",
+          "email": "sanket@gmail.com",
+          "phone": "098765432",
           "street": "Chabadia road",
-          "city": "Meerut",
-          "state": "Green field public school",
+          "city": "Banglore",
+          "state": "karataka",
           "pincode": "250342"
         }
       ]
@@ -2465,25 +2465,7 @@
       "addresses": []
     }
   ],
-  "cart": [
-    {
-      "id": "3330",
-      "title": "Samsung Universe 9",
-      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-      "price": 1249,
-      "discountPercentage": 15.46,
-      "rating": 4.09,
-      "stock": 36,
-      "brand": "Samsung",
-      "category": "smartphones",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/3/1.jpg"
-      ],
-      "quantity": 1,
-      "user": "7bd9"
-    }
-  ],
+  "cart": [],
   "orders": [
     {
       "id": "607b",
@@ -2621,30 +2603,27 @@
       "status": "pending"
     },
     {
-      "id": "a676",
+      "id": "dacf",
       "products": [
         {
-          "id": "ef7f",
-          "title": "Samsung Galaxy Book",
-          "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
-          "price": 1499,
-          "discountPercentage": 4.15,
-          "rating": 4.25,
-          "stock": 50,
+          "id": "3330",
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
           "brand": "Samsung",
-          "category": "laptops",
-          "thumbnail": "https://cdn.dummyjson.com/product-images/7/thumbnail.jpg",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
           "images": [
-            "https://cdn.dummyjson.com/product-images/7/1.jpg",
-            "https://cdn.dummyjson.com/product-images/7/2.jpg",
-            "https://cdn.dummyjson.com/product-images/7/3.jpg",
-            "https://cdn.dummyjson.com/product-images/7/thumbnail.jpg"
+            "https://cdn.dummyjson.com/product-images/3/1.jpg"
           ],
           "quantity": 1,
           "user": "7bd9"
         }
       ],
-      "totalAmount": 1499,
+      "totalAmount": 1249,
       "totalItems": 1,
       "user": {
         "id": "7bd9",
@@ -2659,11 +2638,28 @@
             "city": "Meerut",
             "state": "Uttar Pradesh",
             "pincode": "250342"
+          },
+          {
+            "name": "aadihsdsuihsiuh",
+            "email": "sbaxjhasjxbajxbjasbx",
+            "phone": "habssjbsjhbas",
+            "street": "Chabadia road",
+            "city": "Meerut",
+            "state": "Green field public school",
+            "pincode": "250342"
           }
         ]
       },
       "paymentMethod": "cash",
-      "selectedAddress": null,
+      "selectedAddress": {
+        "name": "Pankaj  Sharma",
+        "email": "p@gmail.com",
+        "phone": "45678",
+        "street": "Chabadia road, Adarsh nagar ,sardhana ,meerut ,uttar pradesh",
+        "city": "Meerut",
+        "state": "Uttar Pradesh",
+        "pincode": "250342"
+      },
       "status": "pending"
     }
   ]
