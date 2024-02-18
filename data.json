@@ -48,7 +48,9 @@
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
-      "images": ["https://cdn.dummyjson.com/product-images/3/1.jpg"]
+      "images": [
+        "https://cdn.dummyjson.com/product-images/3/1.jpg"
+      ]
     },
     {
       "id": "4",
@@ -1426,7 +1428,9 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://cdn.dummyjson.com/product-images/78/thumbnail.jpg",
-      "images": ["https://cdn.dummyjson.com/product-images/78/thumbnail.jpg"]
+      "images": [
+        "https://cdn.dummyjson.com/product-images/78/thumbnail.jpg"
+      ]
     },
     {
       "id": "79",
@@ -1439,7 +1443,9 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://cdn.dummyjson.com/product-images/79/thumbnail.jpg",
-      "images": ["https://cdn.dummyjson.com/product-images/79/1.jpg"]
+      "images": [
+        "https://cdn.dummyjson.com/product-images/79/1.jpg"
+      ]
     },
     {
       "id": "80",
@@ -2427,21 +2433,12 @@
       "password": "Aaditya12@",
       "addresses": [
         {
-          "name": "Aaditya Sharma",
-          "email": "saaditya940@gmail.com",
-          "phone": "+916397673487",
-          "street": "Chabadia road",
+          "name": "Pankaj  Sharma",
+          "email": "p@gmail.com",
+          "phone": "45678",
+          "street": "Chabadia road, Adarsh nagar ,sardhana ,meerut ,uttar pradesh",
           "city": "Meerut",
-          "state": "Green field public school",
-          "pincode": "250342"
-        },
-        {
-          "name": "Versha",
-          "email": "aadityasharma20112000@gmail.com",
-          "phone": "8767676786",
-          "street": "Chabadia road",
-          "city": "Meerut",
-          "state": "Green field public school",
+          "state": "Uttar Pradesh",
           "pincode": "250342"
         }
       ]
@@ -2459,7 +2456,28 @@
       "addresses": []
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "ef7f",
+      "title": "Samsung Galaxy Book",
+      "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
+      "price": 1499,
+      "discountPercentage": 4.15,
+      "rating": 4.25,
+      "stock": 50,
+      "brand": "Samsung",
+      "category": "laptops",
+      "thumbnail": "https://cdn.dummyjson.com/product-images/7/thumbnail.jpg",
+      "images": [
+        "https://cdn.dummyjson.com/product-images/7/1.jpg",
+        "https://cdn.dummyjson.com/product-images/7/2.jpg",
+        "https://cdn.dummyjson.com/product-images/7/3.jpg",
+        "https://cdn.dummyjson.com/product-images/7/thumbnail.jpg"
+      ],
+      "quantity": 1,
+      "user": "7bd9"
+    }
+  ],
   "orders": [
     {
       "id": "607b",
@@ -2520,6 +2538,78 @@
         "street": "Chabadia road",
         "city": "Meerut",
         "state": "Green field public school",
+        "pincode": "250342"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "65e3",
+      "products": [
+        {
+          "id": "0ddc",
+          "title": "Samsung Galaxy Book",
+          "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
+          "price": 1499,
+          "discountPercentage": 4.15,
+          "rating": 4.25,
+          "stock": 50,
+          "brand": "Samsung",
+          "category": "laptops",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/7/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/7/1.jpg",
+            "https://cdn.dummyjson.com/product-images/7/2.jpg",
+            "https://cdn.dummyjson.com/product-images/7/3.jpg",
+            "https://cdn.dummyjson.com/product-images/7/thumbnail.jpg"
+          ],
+          "quantity": 2,
+          "user": "7bd9"
+        }
+      ],
+      "totalAmount": 2998,
+      "totalItems": 2,
+      "user": {
+        "id": "7bd9",
+        "email": "Aaditya.sharma@conneqtiongroup.com",
+        "password": "Aaditya12@",
+        "addresses": [
+          {
+            "name": "Aaditya Sharma",
+            "email": "saaditya940@gmail.com",
+            "phone": "+916397673487",
+            "street": "Chabadia road",
+            "city": "Meerut",
+            "state": "Green field public school",
+            "pincode": "250342"
+          },
+          {
+            "name": "Versha",
+            "email": "aadityasharma20112000@gmail.com",
+            "phone": "8767676786",
+            "street": "Chabadia road",
+            "city": "Meerut",
+            "state": "Green field public school",
+            "pincode": "250342"
+          },
+          {
+            "name": "Rajju",
+            "email": "raju@gmail.com",
+            "phone": "56789",
+            "street": "Chabadia road, Adarsh nagar ,sardhana ,meerut ,uttar pradesh",
+            "city": "Meerut",
+            "state": "Uttar Pradesh",
+            "pincode": "250342"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Rajju",
+        "email": "raju@gmail.com",
+        "phone": "56789",
+        "street": "Chabadia road, Adarsh nagar ,sardhana ,meerut ,uttar pradesh",
+        "city": "Meerut",
+        "state": "Uttar Pradesh",
         "pincode": "250342"
       },
       "status": "pending"

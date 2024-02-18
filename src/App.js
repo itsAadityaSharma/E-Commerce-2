@@ -29,6 +29,7 @@ import UserOrder from "./features/user/components/UserOrder.js";
 import UserOrderPage from "./pages/UserOrderPage.js";
 import { UserProfile } from "./features/user/components/UserProfile.js";
 import UrseProfilePage from "./pages/UrseProfilePage.js";
+import { fetchLoggedInUserAsync } from "./features/user/UserSlice.js";
 
 const router = createBrowserRouter([
   {
@@ -95,7 +96,10 @@ function App() {
   const item = useSelector(selectLatestItems);
 
   useEffect(() => {
-    if (user) dispatch(fetchItemByUserIdAsync(user.id));
+    if (user) {
+      dispatch(fetchItemByUserIdAsync(user.id));
+      dispatch(fetchLoggedInUserAsync(user.id));
+    }
   }, [dispatch, user, item]);
 
   return (

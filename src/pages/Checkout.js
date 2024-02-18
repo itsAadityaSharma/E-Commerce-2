@@ -20,6 +20,7 @@ import {
   selectCurrentOrder,
   selectCurrentOrderStatus,
 } from "../features/order/orderSlice";
+import { selectUserInfo } from "../features/user/UserSlice";
 
 const Checkout = () => {
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ const Checkout = () => {
     formState: { errors },
   } = useForm();
 
-  const user = useSelector(selectLoggedInUser);
+  const user = useSelector(selectUserInfo);
 
   const [open, setOpen] = useState(true);
   const products = useSelector(selectCartProduct);
