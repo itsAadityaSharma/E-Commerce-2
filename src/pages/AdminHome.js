@@ -1,16 +1,16 @@
 import React from "react";
 import Navbar from "../features/Navbar/Navbar";
 import ProductList from "../features/product/component/ProductList";
-import { Link } from "react-router-dom";
+import AdminProductList from "../features/admin/component/AdminProductList";
 
-const Home = () => {
+const AdminHome = () => {
   return (
     <div>
       <Navbar>
-        <ProductList></ProductList>
+        <AdminProductList></AdminProductList>
       </Navbar>
     </div>
   );
 };
 
-export default Home;
+export default AdminHome;
