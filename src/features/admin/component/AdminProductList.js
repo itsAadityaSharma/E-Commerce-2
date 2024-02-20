@@ -278,7 +278,7 @@ export default function AdminProductList() {
 
                   <div className="lg:col-span-3">
                     <div className="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-fit mx-10">
-                      <button>Add New Product</button>
+                      <Link to="/admin/product-form">Add New Product</Link>
                     </div>
                     <ProductGrid products={products}></ProductGrid>
                   </div>

@@ -1,4 +1,4 @@
-//4:38:00
+//5:51:00
 import React, { useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home";
@@ -35,6 +35,8 @@ import ForgotPasswordPage from "./pages/forgotPasswordPage.js";
 import AdminHome from "./pages/AdminHome.js";
 import AdminProductDetailPage from "./pages/AdminProductDetailPage.js";
 import ProtectedAdmin from "./features/auth/components/ProtectedAdmin.js";
+import ProductForm from "./features/admin/component/ProductForm.js";
+import AdminProductFormPage from "./pages/AdminProductFormPage.js";
 
 const router = createBrowserRouter([
   {
@@ -90,6 +92,14 @@ const router = createBrowserRouter([
     element: (
       <ProtectedAdmin>
         <AdminProductDetailPage></AdminProductDetailPage>
+      </ProtectedAdmin>
+    ),
+  },
+  {
+    path: "/admin/product-form",
+    element: (
+      <ProtectedAdmin>
+        <AdminProductFormPage></AdminProductFormPage>
       </ProtectedAdmin>
     ),
   },
