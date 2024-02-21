@@ -4,9 +4,9 @@
       "id": "1",
       "title": "iPhone 9",
       "description": "An apple mobile which is nothing like apple",
-      "price": 549,
+      "price": 5999,
       "discountPercentage": 12.96,
-      "rating": 4.69,
+      "rating": 0,
       "stock": 94,
       "brand": "Apple",
       "category": "smartphones",
@@ -15,15 +15,16 @@
         "https://cdn.dummyjson.com/product-images/1/1.jpg",
         "https://cdn.dummyjson.com/product-images/1/2.jpg",
         "https://cdn.dummyjson.com/product-images/1/3.jpg",
-        "https://cdn.dummyjson.com/product-images/1/4.jpg",
         "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
-      ]
+      ],
+      "brands": "Apple",
+      "categories": "smartphones"
     },
     {
       "id": "2",
       "title": "iPhone X",
       "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
-      "price": 899,
+      "price": 6787,
       "discountPercentage": 17.94,
       "rating": 4.44,
       "stock": 34,
@@ -35,7 +36,9 @@
         "https://cdn.dummyjson.com/product-images/2/2.jpg",
         "https://cdn.dummyjson.com/product-images/2/3.jpg",
         "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
-      ]
+      ],
+      "brands": "Apple",
+      "categories": "smartphones"
     },
     {
       "id": "3",
@@ -56,9 +59,9 @@
       "id": "4",
       "title": "OPPOF19",
       "description": "OPPO F19 is officially announced on April 2021.",
-      "price": 280,
+      "price": 49,
       "discountPercentage": 17.91,
-      "rating": 4.3,
+      "rating": 0,
       "stock": 123,
       "brand": "OPPO",
       "category": "smartphones",
@@ -67,9 +70,10 @@
         "https://cdn.dummyjson.com/product-images/4/1.jpg",
         "https://cdn.dummyjson.com/product-images/4/2.jpg",
         "https://cdn.dummyjson.com/product-images/4/3.jpg",
-        "https://cdn.dummyjson.com/product-images/4/4.jpg",
         "https://cdn.dummyjson.com/product-images/4/thumbnail.jpg"
-      ]
+      ],
+      "brands": "OPPO",
+      "categories": "smartphones"
     },
     {
       "id": "5",
@@ -1838,6 +1842,43 @@
         "https://cdn.dummyjson.com/product-images/100/3.jpg",
         "https://cdn.dummyjson.com/product-images/100/thumbnail.jpg"
       ]
+    },
+    {
+      "id": "f44d",
+      "title": "Doremon",
+      "description": "A cool doremon Toy",
+      "price": "12",
+      "discountPercentage": "10",
+      "stock": "8",
+      "thumbnail": "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.b07ojCMD0QM_vM0xEhYt6wHaJq%26pid%3DApi&sp=1708534978T2577f3aefd49af00f8744c5fc00df73a2e7e17532fb4c4bfcfbb58df0abed4e2",
+      "brands": "Samsung",
+      "categories": "tops",
+      "images": [
+        "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.b07ojCMD0QM_vM0xEhYt6wHaJq%26pid%3DApi&sp=1708534978T2577f3aefd49af00f8744c5fc00df73a2e7e17532fb4c4bfcfbb58df0abed4e2",
+        "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.b07ojCMD0QM_vM0xEhYt6wHaJq%26pid%3DApi&sp=1708534978T2577f3aefd49af00f8744c5fc00df73a2e7e17532fb4c4bfcfbb58df0abed4e2",
+        "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.b07ojCMD0QM_vM0xEhYt6wHaJq%26pid%3DApi&sp=1708534978T2577f3aefd49af00f8744c5fc00df73a2e7e17532fb4c4bfcfbb58df0abed4e2",
+        "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.b07ojCMD0QM_vM0xEhYt6wHaJq%26pid%3DApi&sp=1708534978T2577f3aefd49af00f8744c5fc00df73a2e7e17532fb4c4bfcfbb58df0abed4e2"
+      ],
+      "rating": 0,
+      "delete": true
+    },
+    {
+      "id": "5326",
+      "title": "luna",
+      "description": "A beautiful scooter",
+      "price": 2000,
+      "discountPercentage": 12.96,
+      "stock": 94,
+      "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+      "brands": "Apple",
+      "categories": "smartphones",
+      "rating": 0,
+      "images": [
+        "https://cdn.dummyjson.com/product-images/1/1.jpg",
+        "https://cdn.dummyjson.com/product-images/1/2.jpg",
+        "https://cdn.dummyjson.com/product-images/1/3.jpg",
+        "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
+      ]
     }
   ],
   "brands": [
@@ -2443,29 +2484,7 @@
       "role": "user"
     }
   ],
-  "cart": [
-    {
-      "id": "b7a0",
-      "title": "iPhone 9",
-      "description": "An apple mobile which is nothing like apple",
-      "price": 549,
-      "discountPercentage": 12.96,
-      "rating": 4.69,
-      "stock": 94,
-      "brand": "Apple",
-      "category": "smartphones",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/1/1.jpg",
-        "https://cdn.dummyjson.com/product-images/1/2.jpg",
-        "https://cdn.dummyjson.com/product-images/1/3.jpg",
-        "https://cdn.dummyjson.com/product-images/1/4.jpg",
-        "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
-      ],
-      "quantity": 1,
-      "user": "7bd9"
-    }
-  ],
+  "cart": [],
   "orders": [
     {
       "id": "607b",
@@ -2660,6 +2679,63 @@
         "state": "Uttar Pradesh",
         "pincode": "250342"
       },
+      "status": "pending"
+    },
+    {
+      "id": "c87a",
+      "products": [
+        {
+          "id": "b7a0",
+          "title": "iPhone 9",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 549,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/1/1.jpg",
+            "https://cdn.dummyjson.com/product-images/1/2.jpg",
+            "https://cdn.dummyjson.com/product-images/1/3.jpg",
+            "https://cdn.dummyjson.com/product-images/1/4.jpg",
+            "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "7bd9"
+        }
+      ],
+      "totalAmount": 549,
+      "totalItems": 1,
+      "user": {
+        "id": "7bd9",
+        "email": "Aaditya.sharma@conneqtiongroup.com",
+        "password": "Aaditya12@",
+        "role": "admin",
+        "addresses": [
+          {
+            "name": "Pankaj  Sharma",
+            "email": "p@gmail.com",
+            "phone": "45678",
+            "street": "Chabadia road, Adarsh nagar ",
+            "city": "Meerut",
+            "state": "Uttar Pradesh",
+            "pincode": "250342"
+          },
+          {
+            "name": "Sanket",
+            "email": "sanket@gmail.com",
+            "phone": "098765432",
+            "street": "Chabadia road",
+            "city": "Banglore",
+            "state": "karataka",
+            "pincode": "250342"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": null,
       "status": "pending"
     }
   ]

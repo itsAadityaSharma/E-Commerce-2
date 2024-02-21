@@ -1,21 +1,95 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
-import { useSelector } from "react-redux";
-import { selectBrands, selectCategories } from "../../product/ProductSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  clearSelectedProduct,
+  createProductAsync,
+  fetchProductByIdAsync,
+  selectBrands,
+  selectCategories,
+  selectedProductById,
+  updateProductAsync,
+} from "../../product/ProductSlice";
 import { useForm } from "react-hook-form";
+import { Link, useParams } from "react-router-dom";
 const ProductForm = () => {
-  const brands = useSelector(selectBrands);
-  const categories = useSelector(selectCategories);
-
   const {
     register,
     handleSubmit,
     watch,
+    setValue,
+    reset,
     formState: { errors },
   } = useForm();
+  const brands = useSelector(selectBrands);
+  const categories = useSelector(selectCategories);
+  const dispatch = useDispatch();
+  const params = useParams();
+  const selectedProduct = useSelector(selectedProductById);
+
+  useEffect(() => {
+    if (params.id) {
+      dispatch(fetchProductByIdAsync(params.id));
+    } else {
+      dispatch(clearSelectedProduct());
+    }
+  }, [dispatch, params.id]);
+
+  useEffect(() => {
+    if (selectedProduct && params.id) {
+      setValue("title", selectedProduct.title);
+      setValue("description", selectedProduct.description);
+      setValue("price", selectedProduct.price);
+      setValue("rating", selectedProduct.rating);
+      setValue("discountPercentage", selectedProduct.discountPercentage);
+      setValue("thumbnail", selectedProduct.thumbnail);
+      setValue("stock", selectedProduct.stock);
+      setValue("image1", selectedProduct.images[0]);
+      setValue("image2", selectedProduct.images[1]);
+      setValue("image3", selectedProduct.images[2]);
+      setValue("brands", selectedProduct.brand);
+      setValue("categories", selectedProduct.category);
+    }
+  }, [selectedProduct, params.id, setValue]);
+
+  const handleDelete = () => {
+    const product = { ...selectedProduct };
+    product.delete = true;
+    dispatch(updateProductAsync(product));
+  };
 
   return (
-    <form className="text-left">
+    <form
+      className="text-left"
+      noValidate
+      onSubmit={handleSubmit((data) => {
+        console.log(data);
+        const product = { ...data };
+        product.images = [
+          product.image1,
+          product.image2,
+          product.image3,
+          product.thumbnail,
+        ];
+        product.rating = 0;
+        delete product["image1"];
+        delete product["image2"];
+        delete product["image3"];
+        product.price = +product.price;
+        product.discountPercentage = +product.discountPercentage;
+        product.stock = +product.stock;
+        console.log(product);
+        if (params.id) {
+          const updateProduct = { id: params.id, ...product };
+          product.rating = selectedProduct.rating || 0;
+          dispatch(updateProductAsync(updateProduct));
+          reset();
+        } else {
+          dispatch(createProductAsync(product));
+          reset();
+        }
+      })}
+    >
       <div className="space-y-12 bg-white p-12">
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">
@@ -333,12 +407,21 @@ const ProductForm = () => {
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
-        <button
-          type="button"
+        <Link
+          to="/admin"
           className="text-sm font-semibold leading-6 text-gray-900"
         >
           Cancel
-        </button>
+        </Link>
+        {selectedProduct && (
+          <button
+            onClick={handleDelete}
+            className="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Delete
+          </button>
+        )}
+
         <button
           type="submit"
           className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"

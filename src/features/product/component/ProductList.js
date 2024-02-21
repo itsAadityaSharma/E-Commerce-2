@@ -128,6 +128,7 @@ export default function ProductList() {
   useEffect(() => {
     const pagination = { _page: page };
     dispatch(fetchProductsByFiltersAsync({ filter, sort, pagination }));
+    //TODO: server will filter deleted products
   }, [dispatch, filter, sort, page]);
 
   useEffect(() => {
@@ -601,6 +602,13 @@ function ProductGrid({ products }) {
                     </p>
                   </div>
                 </div>
+                {product.delete && (
+                  <div>
+                    <p className="text-sm  text-left text-red-600">
+                      Out of Stock
+                    </p>
+                  </div>
+                )}
               </div>
             </Link>
           ))}

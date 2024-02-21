@@ -17,6 +17,34 @@ export function fetchProductById(id) {
     resolve({ data });
   });
 }
+export function createProduct(product) {
+  return new Promise(async (resolve) => {
+    const response = await fetch("http://localhost:8080/products/", {
+      method: "POST",
+      body: JSON.stringify(product),
+      headers: { "content-type": "application/json" },
+    });
+    const data = await response.json();
+    resolve({ data });
+  });
+}
+
+export function updateProduct(product) {
+  return new Promise(async (resolve) => {
+    const response = await fetch(
+      "http://localhost:8080/products/" + product.id,
+      {
+        method: "PATCH",
+        body: JSON.stringify(product),
+        headers: { "content-type": "application/json" },
+      }
+    );
+    const data = await response.json();
+    //TODO : on server it will only return some info of user(not password)
+    resolve({ data });
+  });
+}
+
 export function fetchProductsByFilters(filter, sort, pagination) {
   let queryString = "";
   for (let key in filter) {
