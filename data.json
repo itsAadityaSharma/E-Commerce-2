@@ -2480,7 +2480,17 @@
       "id": "af23",
       "email": "a@gmail.com",
       "password": "Aaditya12@",
-      "addresses": [],
+      "addresses": [
+        {
+          "name": "Raj Baghel my herro",
+          "email": "raj@gmail.com",
+          "phone": "1223435678",
+          "street": "Chabadia road",
+          "city": "Meerut",
+          "state": "Green field public school",
+          "pincode": "250342"
+        }
+      ],
       "role": "user"
     }
   ],
@@ -2682,15 +2692,15 @@
       "status": "pending"
     },
     {
-      "id": "c87a",
+      "id": "0134",
       "products": [
         {
-          "id": "b7a0",
+          "id": "5ed3",
           "title": "iPhone 9",
           "description": "An apple mobile which is nothing like apple",
-          "price": 549,
+          "price": 5999,
           "discountPercentage": 12.96,
-          "rating": 4.69,
+          "rating": 0,
           "stock": 94,
           "brand": "Apple",
           "category": "smartphones",
@@ -2699,43 +2709,141 @@
             "https://cdn.dummyjson.com/product-images/1/1.jpg",
             "https://cdn.dummyjson.com/product-images/1/2.jpg",
             "https://cdn.dummyjson.com/product-images/1/3.jpg",
-            "https://cdn.dummyjson.com/product-images/1/4.jpg",
             "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
           ],
-          "quantity": 1,
-          "user": "7bd9"
+          "brands": "Apple",
+          "categories": "smartphones",
+          "quantity": 3,
+          "user": "af23"
         }
       ],
-      "totalAmount": 549,
-      "totalItems": 1,
+      "totalAmount": 17997,
+      "totalItems": 3,
       "user": {
-        "id": "7bd9",
-        "email": "Aaditya.sharma@conneqtiongroup.com",
+        "id": "af23",
+        "email": "a@gmail.com",
         "password": "Aaditya12@",
-        "role": "admin",
         "addresses": [
           {
-            "name": "Pankaj  Sharma",
-            "email": "p@gmail.com",
-            "phone": "45678",
-            "street": "Chabadia road, Adarsh nagar ",
-            "city": "Meerut",
-            "state": "Uttar Pradesh",
-            "pincode": "250342"
-          },
-          {
-            "name": "Sanket",
-            "email": "sanket@gmail.com",
-            "phone": "098765432",
+            "name": "Raj Baghel",
+            "email": "raj@gmail.com",
+            "phone": "1223435678",
             "street": "Chabadia road",
-            "city": "Banglore",
-            "state": "karataka",
+            "city": "Meerut",
+            "state": "Green field public school",
             "pincode": "250342"
           }
-        ]
+        ],
+        "role": "user"
+      },
+      "paymentMethod": "card",
+      "selectedAddress": {
+        "name": "Raj Baghel",
+        "email": "raj@gmail.com",
+        "phone": "1223435678",
+        "street": "Chabadia road",
+        "city": "Meerut",
+        "state": "Green field public school",
+        "pincode": "250342"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "6737",
+      "products": [
+        {
+          "id": "8663",
+          "title": "iPhone 9",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 5999,
+          "discountPercentage": 12.96,
+          "rating": 0,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/1/1.jpg",
+            "https://cdn.dummyjson.com/product-images/1/2.jpg",
+            "https://cdn.dummyjson.com/product-images/1/3.jpg",
+            "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
+          ],
+          "brands": "Apple",
+          "categories": "smartphones",
+          "quantity": 1,
+          "user": "af23"
+        },
+        {
+          "id": "a8ef",
+          "title": "MacBook Pro",
+          "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+          "price": 1749,
+          "discountPercentage": 11.02,
+          "rating": 4.57,
+          "stock": 83,
+          "brand": "Apple",
+          "category": "laptops",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/6/thumbnail.png",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/6/1.png",
+            "https://cdn.dummyjson.com/product-images/6/2.jpg",
+            "https://cdn.dummyjson.com/product-images/6/3.png",
+            "https://cdn.dummyjson.com/product-images/6/4.jpg"
+          ],
+          "quantity": 1,
+          "user": "af23"
+        },
+        {
+          "id": "d147",
+          "title": "Freckle Treatment Cream- 15gm",
+          "description": "Fair & Clear is Pakistan's only pure Freckle cream which helpsfade Freckles, Darkspots and pigments. Mercury level is 0%, so there are no side effects.",
+          "price": 70,
+          "discountPercentage": 16.99,
+          "rating": 4.06,
+          "stock": 140,
+          "brand": "Fair & Clear",
+          "category": "skincare",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/20/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/20/1.jpg",
+            "https://cdn.dummyjson.com/product-images/20/2.jpg",
+            "https://cdn.dummyjson.com/product-images/20/3.jpg",
+            "https://cdn.dummyjson.com/product-images/20/4.jpg",
+            "https://cdn.dummyjson.com/product-images/20/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "af23"
+        }
+      ],
+      "totalAmount": 7818,
+      "totalItems": 3,
+      "user": {
+        "id": "af23",
+        "email": "a@gmail.com",
+        "password": "Aaditya12@",
+        "addresses": [
+          {
+            "name": "Raj Baghel my herro",
+            "email": "raj@gmail.com",
+            "phone": "1223435678",
+            "street": "Chabadia road",
+            "city": "Meerut",
+            "state": "Green field public school",
+            "pincode": "250342"
+          }
+        ],
+        "role": "user"
       },
       "paymentMethod": "cash",
-      "selectedAddress": null,
+      "selectedAddress": {
+        "name": "Raj Baghel my herro",
+        "email": "raj@gmail.com",
+        "phone": "1223435678",
+        "street": "Chabadia road",
+        "city": "Meerut",
+        "state": "Green field public school",
+        "pincode": "250342"
+      },
       "status": "pending"
     }
   ]
