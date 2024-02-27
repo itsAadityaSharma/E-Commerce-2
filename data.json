@@ -2557,7 +2557,7 @@
         "state": "Green field public school",
         "pincode": "250342"
       },
-      "status": "pending"
+      "status": "cancelled"
     },
     {
       "id": "65e3",
@@ -2612,7 +2612,7 @@
             "name": "Rajju",
             "email": "raju@gmail.com",
             "phone": "56789",
-            "street": "Chabadia road, Adarsh nagar ,sardhana ,meerut ,uttar pradesh",
+            "street": "Chabadia road",
             "city": "Meerut",
             "state": "Uttar Pradesh",
             "pincode": "250342"
@@ -2624,12 +2624,12 @@
         "name": "Rajju",
         "email": "raju@gmail.com",
         "phone": "56789",
-        "street": "Chabadia road, Adarsh nagar ,sardhana ,meerut ,uttar pradesh",
+        "street": "Chabadia road",
         "city": "Meerut",
         "state": "Uttar Pradesh",
         "pincode": "250342"
       },
-      "status": "pending"
+      "status": "dispatched"
     },
     {
       "id": "dacf",
@@ -2663,7 +2663,7 @@
             "name": "Pankaj  Sharma",
             "email": "p@gmail.com",
             "phone": "45678",
-            "street": "Chabadia road, Adarsh nagar ,sardhana ,meerut ,uttar pradesh",
+            "street": "Chabadia road",
             "city": "Meerut",
             "state": "Uttar Pradesh",
             "pincode": "250342"
@@ -2684,12 +2684,12 @@
         "name": "Pankaj  Sharma",
         "email": "p@gmail.com",
         "phone": "45678",
-        "street": "Chabadia road, Adarsh nagar ,sardhana ,meerut ,uttar pradesh",
+        "street": "Chabadia road",
         "city": "Meerut",
         "state": "Uttar Pradesh",
         "pincode": "250342"
       },
-      "status": "pending"
+      "status": "delivered"
     },
     {
       "id": "0134",
@@ -2844,7 +2844,7 @@
         "state": "Green field public school",
         "pincode": "250342"
       },
-      "status": "pending"
+      "status": "delivered"
     }
   ]
 }

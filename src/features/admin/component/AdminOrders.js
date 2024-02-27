@@ -1,18 +1,39 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllOrdersAsync, selectAllOrder } from "../../order/orderSlice";
+import {
+  fetchAllOrdersAsync,
+  selectAllOrder,
+  updateOrderAsync,
+} from "../../order/orderSlice";
+
+import { XMarkIcon, EyeIcon, PencilIcon } from "@heroicons/react/24/outline";
+import { discountedPrice } from "../../../app/comstants";
 
 const AdminOrders = () => {
   const dispatch = useDispatch();
 
   const [page, setPage] = useState(1);
+  const [editableOrderID, setEditableOrderId] = useState(-1);
 
   useEffect(() => {
     const pagination = { _page: page };
     dispatch(fetchAllOrdersAsync(pagination));
   }, [dispatch, page]);
+
   const orders = useSelector(selectAllOrder);
   console.log(orders);
+
+  const handleShow = () => {};
+
+  const handleEdit = (order) => {
+    setEditableOrderId(order.id);
+  };
+
+  const handleUpdate = (e, order) => {
+    const updatedOrder = { ...order, status: e.target.value };
+    dispatch(updateOrderAsync(updatedOrder));
+    setEditableOrderId(-1);
+  };
 
   return (
     <div className="overflow-x-auto">
@@ -25,6 +46,7 @@ const AdminOrders = () => {
                   <th className="py-3 px-6 text-left">Order Number</th>
                   <th className="py-3 px-6 text-left">Items</th>
                   <th className="py-3 px-6 text-center">Total Amount</th>
+                  <th className="py-3 px-6 text-center">Address</th>
                   <th className="py-3 px-6 text-center">Status</th>
                   <th className="py-3 px-6 text-center">Actions</th>
                 </tr>
@@ -47,7 +69,10 @@ const AdminOrders = () => {
                               src={item.thumbnail}
                             />
                           </div>
-                          <span>{item.title}</span>
+                          <span>
+                            {item.title} - #{item.quantity} - $
+                            {discountedPrice(item)}
+                          </span>
                         </div>
                       ))}
                     </td>
@@ -56,64 +81,45 @@ const AdminOrders = () => {
                         ${order.totalAmount}
                       </div>
                     </td>
+                    <td className="flex flex-wrap py-3 px-6 text-center">
+                      <div className="">
+                        <div>
+                          <strong>{order.selectedAddress.name}</strong>,
+                        </div>
+                        <div>{order.selectedAddress.street},</div>
+                        <div>{order.selectedAddress.city},</div>
+                        <div>{order.selectedAddress.state},</div>
+                        <div>{order.selectedAddress.pincode},</div>
+                        <div>{order.selectedAddress.phone},</div>
+                      </div>
+                    </td>
+
                     <td className="py-3 px-6 text-center">
-                      <span className="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">
-                        {order.status}
-                      </span>
+                      {order.id === editableOrderID ? (
+                        <select onChange={(e) => handleUpdate(e, order)}>
+                          <option>--Select Status--</option>
+                          <option value="pending">Pending</option>
+                          <option value="dispatched">Dispatched</option>
+                          <option value="cancelled">Cancelled</option>
+                          <option value="delivered">Delivered</option>
+                        </select>
+                      ) : (
+                        <span className="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">
+                          {order.status}
+                        </span>
+                      )}
                     </td>
                     <td className="py-3 px-6 text-center">
                       <div className="flex item-center justify-center">
-                        <div className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                            />
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                            />
-                          </svg>
+                        <div className="w-6 mr-2 transform hover:text-purple-500 hover:scale-110">
+                          <EyeIcon onClick={(e) => handleShow(order)}></EyeIcon>
                         </div>
-                        <div className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                            />
-                          </svg>
+                        <div className="w-6 mr-2 transform hover:text-purple-500 hover:scale-110">
+                          <PencilIcon
+                            onClick={(e) => handleEdit(order)}
+                          ></PencilIcon>
                         </div>
-                        <div className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                            />
-                          </svg>
-                        </div>
+                        <div className="w-6 mr-2 transform hover:text-purple-500 hover:scale-110"></div>
                       </div>
                     </td>
                   </tr>
