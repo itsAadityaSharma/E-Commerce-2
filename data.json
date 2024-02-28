@@ -2557,7 +2557,7 @@
         "state": "Green field public school",
         "pincode": "250342"
       },
-      "status": "cancelled"
+      "status": "delivered"
     },
     {
       "id": "65e3",
@@ -2689,7 +2689,7 @@
         "state": "Uttar Pradesh",
         "pincode": "250342"
       },
-      "status": "delivered"
+      "status": "cancelled"
     },
     {
       "id": "0134",
@@ -2844,7 +2844,7 @@
         "state": "Green field public school",
         "pincode": "250342"
       },
-      "status": "delivered"
+      "status": "dispatched"
     }
   ]
 }

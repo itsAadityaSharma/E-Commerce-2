@@ -8,6 +8,7 @@ import {
 
 import { XMarkIcon, EyeIcon, PencilIcon } from "@heroicons/react/24/outline";
 import { discountedPrice } from "../../../app/comstants";
+import Pagination from "../../common/Pagination";
 
 const AdminOrders = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,19 @@ const AdminOrders = () => {
     const updatedOrder = { ...order, status: e.target.value };
     dispatch(updateOrderAsync(updatedOrder));
     setEditableOrderId(-1);
+  };
+
+  const chooseColor = (status) => {
+    switch (status) {
+      case "pending":
+        return `bg-purple-300 text-purple-600`;
+      case "delivered":
+        return `bg-green-300 text-green-600`;
+      case "dispatched":
+        return `bg-yellow-300 text-yellow-600`;
+      case "cancelled":
+        return `bg-red-300 text-red-600`;
+    }
   };
 
   return (
@@ -104,7 +118,11 @@ const AdminOrders = () => {
                           <option value="delivered">Delivered</option>
                         </select>
                       ) : (
-                        <span className="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">
+                        <span
+                          className={`${chooseColor(
+                            order.status
+                          )} py-1 px-3 rounded-full text-xs`}
+                        >
                           {order.status}
                         </span>
                       )}
@@ -129,6 +147,12 @@ const AdminOrders = () => {
           </div>
         </div>
       </div>
+      <Pagination
+        page={page}
+        setPage={setPage}
+        handlePage={handlePage}
+        totalItems={totalOrders}
+      ></Pagination>
     </div>
   );
 };
