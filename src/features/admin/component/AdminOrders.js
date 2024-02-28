@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchAllOrdersAsync,
   selectAllOrder,
+  selectTotalOrder,
   updateOrderAsync,
 } from "../../order/orderSlice";
 
@@ -22,6 +23,7 @@ const AdminOrders = () => {
   }, [dispatch, page]);
 
   const orders = useSelector(selectAllOrder);
+  const totalOrders = useSelector(selectTotalOrder);
   console.log(orders);
 
   const handleShow = () => {};
@@ -34,6 +36,10 @@ const AdminOrders = () => {
     const updatedOrder = { ...order, status: e.target.value };
     dispatch(updateOrderAsync(updatedOrder));
     setEditableOrderId(-1);
+  };
+
+  const handlePage = (e, page) => {
+    setPage(page);
   };
 
   const chooseColor = (status) => {

@@ -72,8 +72,8 @@ const Pagination = ({ page, handlePage, totalItems }) => {
                 if (page == 1 && totalItems / ITEMS_PER_PAGE < 1) {
                   handlePage(e, 1);
                 } else {
-                  page == totalItems / ITEMS_PER_PAGE
-                    ? handlePage(e, totalItems / ITEMS_PER_PAGE)
+                  page == Math.floor(totalItems / ITEMS_PER_PAGE) + 1
+                    ? handlePage(e, Math.floor(totalItems / ITEMS_PER_PAGE) + 1)
                     : handlePage(e, page + 1);
                 }
               }}

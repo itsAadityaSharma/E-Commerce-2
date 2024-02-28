@@ -145,7 +145,8 @@
         "https://cdn.dummyjson.com/product-images/8/3.jpg",
         "https://cdn.dummyjson.com/product-images/8/4.jpg",
         "https://cdn.dummyjson.com/product-images/8/thumbnail.jpg"
-      ]
+      ],
+      "delete": true
     },
     {
       "id": "9",
@@ -540,11 +541,11 @@
     },
     {
       "id": "30",
-      "title": "Key Holder",
+      "title": "Key Holder xxx",
       "description": "Attractive DesignMetallic materialFour key hooksReliable & DurablePremium Quality",
       "price": 30,
       "discountPercentage": 2.92,
-      "rating": 4.92,
+      "rating": 0,
       "stock": 54,
       "brand": "Golden",
       "category": "home-decoration",
@@ -554,7 +555,9 @@
         "https://cdn.dummyjson.com/product-images/30/2.jpg",
         "https://cdn.dummyjson.com/product-images/30/3.jpg",
         "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg"
-      ]
+      ],
+      "brands": "Golden",
+      "categories": "home-decoration"
     },
     {
       "id": "31",
@@ -2494,7 +2497,50 @@
       "role": "user"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "3444",
+      "title": "MacBook Pro",
+      "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+      "price": 1749,
+      "discountPercentage": 11.02,
+      "rating": 4.57,
+      "stock": 83,
+      "brand": "Apple",
+      "category": "laptops",
+      "thumbnail": "https://cdn.dummyjson.com/product-images/6/thumbnail.png",
+      "images": [
+        "https://cdn.dummyjson.com/product-images/6/1.png",
+        "https://cdn.dummyjson.com/product-images/6/2.jpg",
+        "https://cdn.dummyjson.com/product-images/6/3.png",
+        "https://cdn.dummyjson.com/product-images/6/4.jpg"
+      ],
+      "quantity": 1,
+      "user": "7bd9"
+    },
+    {
+      "id": "776c",
+      "title": "iPhone X",
+      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+      "price": 6787,
+      "discountPercentage": 17.94,
+      "rating": 4.44,
+      "stock": 34,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
+      "images": [
+        "https://cdn.dummyjson.com/product-images/2/1.jpg",
+        "https://cdn.dummyjson.com/product-images/2/2.jpg",
+        "https://cdn.dummyjson.com/product-images/2/3.jpg",
+        "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
+      ],
+      "brands": "Apple",
+      "categories": "smartphones",
+      "quantity": 1,
+      "user": "7bd9"
+    }
+  ],
   "orders": [
     {
       "id": "607b",
@@ -2557,7 +2603,7 @@
         "state": "Green field public school",
         "pincode": "250342"
       },
-      "status": "delivered"
+      "status": "pending"
     },
     {
       "id": "65e3",
@@ -2689,7 +2735,7 @@
         "state": "Uttar Pradesh",
         "pincode": "250342"
       },
-      "status": "cancelled"
+      "status": "dispatched"
     },
     {
       "id": "0134",
@@ -2845,6 +2891,447 @@
         "pincode": "250342"
       },
       "status": "dispatched"
+    },
+    {
+      "id": "6d6f",
+      "products": [
+        {
+          "id": "4db4",
+          "title": "HP Pavilion 15-DK1056WM",
+          "description": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
+          "price": 1099,
+          "discountPercentage": 6.18,
+          "rating": 4.43,
+          "stock": 89,
+          "brand": "HP Pavilion",
+          "category": "laptops",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/10/thumbnail.jpeg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/10/1.jpg",
+            "https://cdn.dummyjson.com/product-images/10/2.jpg",
+            "https://cdn.dummyjson.com/product-images/10/3.jpg",
+            "https://cdn.dummyjson.com/product-images/10/thumbnail.jpeg"
+          ],
+          "quantity": 1,
+          "user": "7bd9"
+        }
+      ],
+      "totalAmount": 1099,
+      "totalItems": 1,
+      "user": {
+        "id": "7bd9",
+        "email": "Aaditya.sharma@conneqtiongroup.com",
+        "password": "Aaditya12@",
+        "role": "admin",
+        "addresses": [
+          {
+            "name": "Pankaj  Sharma",
+            "email": "p@gmail.com",
+            "phone": "45678",
+            "street": "Chabadia road, Adarsh nagar ",
+            "city": "Meerut",
+            "state": "Uttar Pradesh",
+            "pincode": "250342"
+          },
+          {
+            "name": "Sanket",
+            "email": "sanket@gmail.com",
+            "phone": "098765432",
+            "street": "Chabadia road",
+            "city": "Banglore",
+            "state": "karataka",
+            "pincode": "250342"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Pankaj  Sharma",
+        "email": "p@gmail.com",
+        "phone": "45678",
+        "street": "Chabadia road, Adarsh nagar ",
+        "city": "Meerut",
+        "state": "Uttar Pradesh",
+        "pincode": "250342"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "48e8",
+      "products": [
+        {
+          "id": "0a0e",
+          "title": "sublimation plain kids tank",
+          "description": "sublimation plain kids tank tops wholesale",
+          "price": 100,
+          "discountPercentage": 11.12,
+          "rating": 4.8,
+          "stock": 20,
+          "brand": "Soft Cotton",
+          "category": "tops",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/38/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/38/1.png",
+            "https://cdn.dummyjson.com/product-images/38/2.jpg",
+            "https://cdn.dummyjson.com/product-images/38/3.jpg",
+            "https://cdn.dummyjson.com/product-images/38/4.jpg"
+          ],
+          "quantity": 1,
+          "user": "7bd9"
+        }
+      ],
+      "totalAmount": 100,
+      "totalItems": 1,
+      "user": {
+        "id": "7bd9",
+        "email": "Aaditya.sharma@conneqtiongroup.com",
+        "password": "Aaditya12@",
+        "role": "admin",
+        "addresses": [
+          {
+            "name": "Pankaj  Sharma",
+            "email": "p@gmail.com",
+            "phone": "45678",
+            "street": "Chabadia road, Adarsh nagar ",
+            "city": "Meerut",
+            "state": "Uttar Pradesh",
+            "pincode": "250342"
+          },
+          {
+            "name": "Sanket",
+            "email": "sanket@gmail.com",
+            "phone": "098765432",
+            "street": "Chabadia road",
+            "city": "Banglore",
+            "state": "karataka",
+            "pincode": "250342"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Pankaj  Sharma",
+        "email": "p@gmail.com",
+        "phone": "45678",
+        "street": "Chabadia road, Adarsh nagar ",
+        "city": "Meerut",
+        "state": "Uttar Pradesh",
+        "pincode": "250342"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "9fcf",
+      "products": [
+        {
+          "id": "cb9a",
+          "title": "Spring and summershoes",
+          "description": "Comfortable stretch cloth, lightweight body; ,rubber sole, anti-skid wear;",
+          "price": 20,
+          "discountPercentage": 8.71,
+          "rating": 4.33,
+          "stock": 137,
+          "brand": "Sneakers",
+          "category": "mens-shoes",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/59/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/59/1.jpg",
+            "https://cdn.dummyjson.com/product-images/59/2.jpg",
+            "https://cdn.dummyjson.com/product-images/59/3.jpg",
+            "https://cdn.dummyjson.com/product-images/59/4.jpg",
+            "https://cdn.dummyjson.com/product-images/59/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "7bd9"
+        }
+      ],
+      "totalAmount": 20,
+      "totalItems": 1,
+      "user": {
+        "id": "7bd9",
+        "email": "Aaditya.sharma@conneqtiongroup.com",
+        "password": "Aaditya12@",
+        "role": "admin",
+        "addresses": [
+          {
+            "name": "Pankaj  Sharma",
+            "email": "p@gmail.com",
+            "phone": "45678",
+            "street": "Chabadia road, Adarsh nagar ",
+            "city": "Meerut",
+            "state": "Uttar Pradesh",
+            "pincode": "250342"
+          },
+          {
+            "name": "Sanket",
+            "email": "sanket@gmail.com",
+            "phone": "098765432",
+            "street": "Chabadia road",
+            "city": "Banglore",
+            "state": "karataka",
+            "pincode": "250342"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Sanket",
+        "email": "sanket@gmail.com",
+        "phone": "098765432",
+        "street": "Chabadia road",
+        "city": "Banglore",
+        "state": "karataka",
+        "pincode": "250342"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "4181",
+      "products": [
+        {
+          "id": "f9bc",
+          "title": "Women Shoulder Bags",
+          "description": "LouisWill Women Shoulder Bags Long Clutches Cross Body Bags Phone Bags PU Leather Hand Bags Large Capacity Card Holders Zipper Coin Purses Fashion Crossbody Bags for Girls Ladies",
+          "price": 46,
+          "discountPercentage": 14.65,
+          "rating": 4.71,
+          "stock": 17,
+          "brand": "LouisWill",
+          "category": "womens-bags",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/71/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/71/1.jpg",
+            "https://cdn.dummyjson.com/product-images/71/2.jpg",
+            "https://cdn.dummyjson.com/product-images/71/3.webp",
+            "https://cdn.dummyjson.com/product-images/71/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "7bd9"
+        }
+      ],
+      "totalAmount": 46,
+      "totalItems": 1,
+      "user": {
+        "id": "7bd9",
+        "email": "Aaditya.sharma@conneqtiongroup.com",
+        "password": "Aaditya12@",
+        "role": "admin",
+        "addresses": [
+          {
+            "name": "Pankaj  Sharma",
+            "email": "p@gmail.com",
+            "phone": "45678",
+            "street": "Chabadia road, Adarsh nagar ",
+            "city": "Meerut",
+            "state": "Uttar Pradesh",
+            "pincode": "250342"
+          },
+          {
+            "name": "Sanket",
+            "email": "sanket@gmail.com",
+            "phone": "098765432",
+            "street": "Chabadia road",
+            "city": "Banglore",
+            "state": "karataka",
+            "pincode": "250342"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Sanket",
+        "email": "sanket@gmail.com",
+        "phone": "098765432",
+        "street": "Chabadia road",
+        "city": "Banglore",
+        "state": "karataka",
+        "pincode": "250342"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "ece9",
+      "products": [
+        {
+          "id": "0628",
+          "title": "Cycle Bike Glow",
+          "description": "Universal fitment and easy to install no special wires, can be easily installed and removed. Fits most standard tyre air stem valves of road, mountain bicycles, motocycles and cars.Bright led will turn on w",
+          "price": 35,
+          "discountPercentage": 11.08,
+          "rating": 4.1,
+          "stock": 63,
+          "brand": "Neon LED Light",
+          "category": "automotive",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/90/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/90/1.jpg",
+            "https://cdn.dummyjson.com/product-images/90/2.jpg",
+            "https://cdn.dummyjson.com/product-images/90/3.jpg",
+            "https://cdn.dummyjson.com/product-images/90/4.jpg",
+            "https://cdn.dummyjson.com/product-images/90/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "7bd9"
+        }
+      ],
+      "totalAmount": 35,
+      "totalItems": 1,
+      "user": {
+        "id": "7bd9",
+        "email": "Aaditya.sharma@conneqtiongroup.com",
+        "password": "Aaditya12@",
+        "role": "admin",
+        "addresses": [
+          {
+            "name": "Pankaj  Sharma",
+            "email": "p@gmail.com",
+            "phone": "45678",
+            "street": "Chabadia road, Adarsh nagar ",
+            "city": "Meerut",
+            "state": "Uttar Pradesh",
+            "pincode": "250342"
+          },
+          {
+            "name": "Sanket",
+            "email": "sanket@gmail.com",
+            "phone": "098765432",
+            "street": "Chabadia road",
+            "city": "Banglore",
+            "state": "karataka",
+            "pincode": "250342"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Pankaj  Sharma",
+        "email": "p@gmail.com",
+        "phone": "45678",
+        "street": "Chabadia road, Adarsh nagar ",
+        "city": "Meerut",
+        "state": "Uttar Pradesh",
+        "pincode": "250342"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "6e11",
+      "products": [
+        {
+          "id": "0abe",
+          "title": "new arrivals Fashion motocross goggles",
+          "description": "new arrivals Fashion motocross goggles motorcycle motocross racing motorcycle",
+          "price": 900,
+          "discountPercentage": 3.85,
+          "rating": 4.06,
+          "stock": 109,
+          "brand": "JIEPOLLY",
+          "category": "motorcycle",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/94/thumbnail.webp",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/94/1.webp",
+            "https://cdn.dummyjson.com/product-images/94/2.jpg",
+            "https://cdn.dummyjson.com/product-images/94/3.jpg",
+            "https://cdn.dummyjson.com/product-images/94/thumbnail.webp"
+          ],
+          "quantity": 1,
+          "user": "7bd9"
+        }
+      ],
+      "totalAmount": 900,
+      "totalItems": 1,
+      "user": {
+        "id": "7bd9",
+        "email": "Aaditya.sharma@conneqtiongroup.com",
+        "password": "Aaditya12@",
+        "role": "admin",
+        "addresses": [
+          {
+            "name": "Pankaj  Sharma",
+            "email": "p@gmail.com",
+            "phone": "45678",
+            "street": "Chabadia road, Adarsh nagar ",
+            "city": "Meerut",
+            "state": "Uttar Pradesh",
+            "pincode": "250342"
+          },
+          {
+            "name": "Sanket",
+            "email": "sanket@gmail.com",
+            "phone": "098765432",
+            "street": "Chabadia road",
+            "city": "Banglore",
+            "state": "karataka",
+            "pincode": "250342"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Pankaj  Sharma",
+        "email": "p@gmail.com",
+        "phone": "45678",
+        "street": "Chabadia road, Adarsh nagar ",
+        "city": "Meerut",
+        "state": "Uttar Pradesh",
+        "pincode": "250342"
+      },
+      "status": "cancelled"
+    },
+    {
+      "id": "ff66",
+      "products": [
+        {
+          "id": "4f3e",
+          "title": "MacBook Pro",
+          "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+          "price": 1749,
+          "discountPercentage": 11.02,
+          "rating": 4.57,
+          "stock": 83,
+          "brand": "Apple",
+          "category": "laptops",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/6/thumbnail.png",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/6/1.png",
+            "https://cdn.dummyjson.com/product-images/6/2.jpg",
+            "https://cdn.dummyjson.com/product-images/6/3.png",
+            "https://cdn.dummyjson.com/product-images/6/4.jpg"
+          ],
+          "quantity": 3,
+          "user": "af23"
+        }
+      ],
+      "totalAmount": 5247,
+      "totalItems": 3,
+      "user": {
+        "id": "af23",
+        "email": "a@gmail.com",
+        "password": "Aaditya12@",
+        "addresses": [
+          {
+            "name": "Raj Baghel my herro",
+            "email": "raj@gmail.com",
+            "phone": "1223435678",
+            "street": "Chabadia road",
+            "city": "Meerut",
+            "state": "Green field public school",
+            "pincode": "250342"
+          }
+        ],
+        "role": "user"
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Raj Baghel my herro",
+        "email": "raj@gmail.com",
+        "phone": "1223435678",
+        "street": "Chabadia road",
+        "city": "Meerut",
+        "state": "Green field public school",
+        "pincode": "250342"
+      },
+      "status": "pending"
     }
   ]
 }

@@ -5,7 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProductByIdAsync, selectedProductById } from "../ProductSlice";
 import { useParams } from "react-router-dom";
 import { addToCart } from "../../cart/CartAPI";
-import { addToCartAsync, selectLatestItems } from "../../cart/CartSlice";
+import {
+  addToCartAsync,
+  selectCartProduct,
+  selectLatestItems,
+} from "../../cart/CartSlice";
 import { selectLoggedInUser } from "../../auth/AuthSlice";
 
 //TODO : In server data we  will add color , sizes and higlights
@@ -37,12 +41,18 @@ export default function ProductDetail({ id }) {
   const product = useSelector(selectedProductById);
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser);
+  const items = useSelector(selectCartProduct);
 
   const handleCart = (e) => {
     e.preventDefault();
-    const newItem = { ...product, quantity: 1, user: user.id };
-    delete newItem["id"];
-    dispatch(addToCartAsync(newItem));
+    if (items.findIndex((item) => item.title === product.title) < 0) {
+      const newItem = { ...product, quantity: 1, user: user.id };
+      delete newItem["id"];
+      dispatch(addToCartAsync(newItem));
+      alert("Item added to cart");
+    } else {
+      alert("Already added");
+    }
   };
 
   useEffect(() => {
