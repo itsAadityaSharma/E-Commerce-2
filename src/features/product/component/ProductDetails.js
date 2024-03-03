@@ -45,9 +45,25 @@ export default function ProductDetail({ id }) {
 
   const handleCart = (e) => {
     e.preventDefault();
-    if (items.findIndex((item) => item.title === product.title) < 0) {
-      const newItem = { ...product, quantity: 1, user: user.id };
-      delete newItem["id"];
+    // if (items.findIndex((item) => item.product.id === product.id) < 0) {
+    //   const newItem = {
+    //     product: product.id,
+    //     quantity: 1,
+    //     user: user.id,
+    //   };
+
+    //   dispatch(addToCartAsync(newItem));
+    //   alert("Item added to cart");
+    // }
+    let index = -1;
+    index = items.findIndex((e) => e.product.id === product.id);
+    const newItem = {
+      product: product.id,
+      quantity: 1,
+      user: user.id,
+    };
+
+    if (index == -1) {
       dispatch(addToCartAsync(newItem));
       alert("Item added to cart");
     } else {

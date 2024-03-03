@@ -45,7 +45,7 @@ export function updateProduct(product) {
   });
 }
 
-export function fetchProductsByFilters(filter, sort, pagination) {
+export function fetchProductsByFilters(filter, sort, pagination, admin) {
   let queryString = "";
   for (let key in filter) {
     const categoryValues = filter[key];
@@ -65,6 +65,9 @@ export function fetchProductsByFilters(filter, sort, pagination) {
     }
     queryString += `${key}=${sort[key]}&`;
     console.log(queryString);
+  }
+  if (admin) {
+    queryString += `admin=true`;
   }
   return new Promise(async (resolve) => {
     //TODO : we will not hard-code server URL here

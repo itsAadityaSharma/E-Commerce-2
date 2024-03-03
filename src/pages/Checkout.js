@@ -21,6 +21,7 @@ import {
   selectCurrentOrderStatus,
 } from "../features/order/orderSlice";
 import { selectUserInfo } from "../features/user/UserSlice";
+import { discountedPrice } from "../app/comstants";
 
 const Checkout = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const Checkout = () => {
   const products = useSelector(selectCartProduct);
   const currentOrder = useSelector(selectCurrentOrder);
   const totalAmount = products.reduce(
-    (amount, item) => item.price * item.quantity + amount,
+    (amount, item) => discountedPrice(item.product) * item.quantity + amount,
     0
   );
   const totalItems = products.reduce((total, item) => item.quantity + total, 0);
@@ -62,7 +63,7 @@ const Checkout = () => {
       products,
       totalAmount,
       totalItems,
-      user,
+      user: user.id,
       paymentMethod,
       selectedAddress,
       status: "pending", //other status can be delivered, received
@@ -74,7 +75,9 @@ const Checkout = () => {
   };
 
   const handleQuantity = (e, product) => {
-    dispatch(updateCartByIdAsync({ ...product, quantity: +e.target.value }));
+    dispatch(
+      updateCartByIdAsync({ id: product.id, quantity: +e.target.value })
+    );
   };
 
   const handleRemove = (e, id) => {
@@ -99,15 +102,14 @@ const Checkout = () => {
               className="bg-white px-5 py-10 mt-12"
               noValidate
               onSubmit={handleSubmit((data) => {
-                console.log(data);
-                dispatch(
-                  updateUserAsync({
-                    ...user,
-                    addresses: [...user.addresses, data],
-                  })
-                );
+                const newItem = {
+                  ...user,
+                  addresses: [...user.addresses, data],
+                };
+                console.log(newItem);
+                dispatch(updateUserAsync(newItem));
                 reset();
-                console.log(data);
+                // console.log(data);
               })}
             >
               <div class="space-y-12">
@@ -382,8 +384,8 @@ const Checkout = () => {
                         <li key={product.id} className="flex py-6">
                           <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                             <img
-                              src={product.images[0]}
-                              alt={product.imageAlt}
+                              src={product.product.thumbnail}
+                              alt={product.product.title}
                               className="h-full w-full object-cover object-center"
                             />
                           </div>
@@ -392,12 +394,16 @@ const Checkout = () => {
                             <div>
                               <div className="flex justify-between text-base font-medium text-gray-900">
                                 <h3>
-                                  <a href={product.href}>{product.title}</a>
+                                  <a href={product.product.href}>
+                                    {product.product.title}
+                                  </a>
                                 </h3>
-                                <p className="ml-4">$ {product.price}</p>
+                                <p className="ml-4">
+                                  $ {discountedPrice(product.product)}
+                                </p>
                               </div>
                               <p className="mt-1 text-sm text-left text-gray-500">
-                                {product.color}
+                                {product.product.brand}
                               </p>
                             </div>
                             <div className="flex flex-1 items-end justify-between text-sm">

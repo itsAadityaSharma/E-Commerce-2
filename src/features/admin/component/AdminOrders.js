@@ -13,6 +13,7 @@ import Pagination from "../../common/Pagination";
 
 const AdminOrders = () => {
   const dispatch = useDispatch();
+  const orders = useSelector(selectAllOrder);
 
   const [page, setPage] = useState(1);
   const [editableOrderID, setEditableOrderId] = useState(-1);
@@ -22,7 +23,6 @@ const AdminOrders = () => {
     dispatch(fetchAllOrdersAsync(pagination));
   }, [dispatch, page]);
 
-  const orders = useSelector(selectAllOrder);
   const totalOrders = useSelector(selectTotalOrder);
   console.log(orders);
 
@@ -60,7 +60,7 @@ const AdminOrders = () => {
       <div className="flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
         <div className="w-full">
           <div className="bg-white shadow-md rounded my-6">
-            <table className="min-w-max w-full table-auto">
+            <table className=" w-full table-auto">
               <thead>
                 <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                   <th className="py-3 px-6 text-left">Order Number</th>
@@ -86,12 +86,12 @@ const AdminOrders = () => {
                           <div className="mr-2">
                             <img
                               className="w-6 h-6 rounded-full"
-                              src={item.thumbnail}
+                              src={item.product.thumbnail}
                             />
                           </div>
                           <span>
-                            {item.title} - #{item.quantity} - $
-                            {discountedPrice(item)}
+                            {item.product.title} - #{item.product.quantity} - $
+                            {discountedPrice(item.product)}
                           </span>
                         </div>
                       ))}

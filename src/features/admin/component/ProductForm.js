@@ -47,14 +47,14 @@ const ProductForm = () => {
       setValue("image1", selectedProduct.images[0]);
       setValue("image2", selectedProduct.images[1]);
       setValue("image3", selectedProduct.images[2]);
-      setValue("brands", selectedProduct.brand);
-      setValue("categories", selectedProduct.category);
+      setValue("brand", selectedProduct.brand);
+      setValue("category", selectedProduct.category);
     }
   }, [selectedProduct, params.id, setValue]);
 
   const handleDelete = () => {
     const product = { ...selectedProduct };
-    product.delete = true;
+    product.deleted = true;
     dispatch(updateProductAsync(product));
   };
 
@@ -290,13 +290,13 @@ const ProductForm = () => {
 
         <div className="col-span-full">
           <label
-            htmlFor="brands"
+            htmlFor="brand"
             className="block text-sm font-medium leading-6 text-gray-900"
           >
             Brands
           </label>
           <div className="mt-2">
-            <select {...register("brands", { required: "brands is required" })}>
+            <select {...register("brand", { required: "brands is required" })}>
               <option value="">--choose brand----</option>
               {brands.map((brand) => (
                 <option value={brand.value}>{brand.label}</option>
@@ -307,14 +307,14 @@ const ProductForm = () => {
 
         <div className="col-span-full">
           <label
-            htmlFor="categories"
+            htmlFor="category"
             className="block text-sm font-medium leading-6 text-gray-900"
           >
             Categories
           </label>
           <div className="mt-2">
             <select
-              {...register("categories", {
+              {...register("category", {
                 required: "categories is required",
               })}
             >
