@@ -1,4 +1,4 @@
-//07:19:
+//FrontEnd Done
 import React, { useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home";
