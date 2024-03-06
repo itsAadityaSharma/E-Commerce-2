@@ -11,6 +11,7 @@ import {
   selectLatestItems,
 } from "../../cart/CartSlice";
 import { selectLoggedInUser } from "../../auth/AuthSlice";
+import { selectUserInfo } from "../../user/UserSlice";
 
 //TODO : In server data we  will add color , sizes and higlights
 const colors = [
@@ -40,7 +41,6 @@ export default function ProductDetail({ id }) {
   const [selectedSize, setSelectedSize] = useState(sizes[2]);
   const product = useSelector(selectedProductById);
   const dispatch = useDispatch();
-  const user = useSelector(selectLoggedInUser);
   const items = useSelector(selectCartProduct);
 
   const handleCart = (e) => {
@@ -60,7 +60,6 @@ export default function ProductDetail({ id }) {
     const newItem = {
       product: product.id,
       quantity: 1,
-      user: user.id,
     };
 
     if (index == -1) {
