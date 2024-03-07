@@ -14,8 +14,8 @@ const initialState = {
 
 export const fetchLoggedInUserOrdersAsync = createAsyncThunk(
   "user/fetchLoggedInUserOrders",
-  async (userId) => {
-    const response = await fetchLoggedInUserOrders(userId);
+  async () => {
+    const response = await fetchLoggedInUserOrders();
     return response.data;
   }
 );
@@ -58,7 +58,7 @@ export const userSlice = createSlice({
       .addCase(updateUserAsync.fulfilled, (state, action) => {
         state.status = "idle";
         //this info can be different or more from logged-in User Info
-        state.userOrders = action.payload;
+        state.userInfo = action.payload;
       })
       .addCase(fetchLoggedInUserAsync.pending, (state) => {
         state.status = "loading";
