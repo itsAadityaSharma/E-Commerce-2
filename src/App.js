@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home";
 import SignUpPage from "./pages/SignUpPage";
-import LoginPage from "./pages/LoginPage.js";
+import LoginPage from "./pages/loginPage.js";
 
 import {
   createBrowserRouter,
@@ -17,7 +17,11 @@ import ProductDetailPage from "./pages/ProductDetailPage.js";
 import Protected from "./features/auth/components/Protected.js";
 import Navbar from "./features/Navbar/Navbar.js";
 import { useDispatch, useSelector } from "react-redux";
-import { selectLoggedInUser } from "./features/auth/AuthSlice.js";
+import {
+  checkAuthAsync,
+  selectLoggedInUser,
+  selectUserChecked,
+} from "./features/auth/AuthSlice.js";
 import {
   fetchItemByUserIdAsync,
   selectCartProduct,
@@ -150,6 +154,11 @@ function App() {
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser);
   const item = useSelector(selectLatestItems);
+  const userChecked = useSelector(selectUserChecked);
+
+  useEffect(() => {
+    dispatch(checkAuthAsync());
+  }, [dispatch]);
 
   useEffect(() => {
     if (user) {
@@ -160,7 +169,7 @@ function App() {
 
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      {userChecked && <RouterProvider router={router} />}
       {/* Link must be inside the Provider */}
     </div>
   );

@@ -5,6 +5,7 @@ import {
   fetchItemByUserIdAsync,
   increment,
   incrementAsync,
+  selectCartLoaded,
   selectCartProduct,
   selectCount,
   updateCartByIdAsync,
@@ -49,6 +50,7 @@ export function Cart() {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(true);
   const products = useSelector(selectCartProduct);
+  const cartLoaded = useSelector(selectCartLoaded);
   const totalAmount = products.reduce(
     (amount, item) => discountedPrice(item.product) * item.quantity + amount,
     0
@@ -69,7 +71,9 @@ export function Cart() {
 
   return (
     <>
-      {products.length === 0 && <Navigate to="/" replace={true}></Navigate>}
+      {products.length === 0 && cartLoaded && (
+        <Navigate to="/" replace={true}></Navigate>
+      )}
 
       <div>
         <div className="mx-auto mt-24 bg-white max-w-7xl px-4 sm:px-6 lg:px-8">
