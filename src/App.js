@@ -42,6 +42,7 @@ import ProtectedAdmin from "./features/auth/components/ProtectedAdmin.js";
 import ProductForm from "./features/admin/component/ProductForm.js";
 import AdminProductFormPage from "./pages/AdminProductFormPage.js";
 import AdminOrdersPage from "./pages/AdminOrdersPage.js";
+import StripeCheckout from "./pages/StripeCheckout.js";
 
 const router = createBrowserRouter([
   {
@@ -147,6 +148,14 @@ const router = createBrowserRouter([
   {
     path: "/forgot-password",
     element: <ForgotPasswordPage></ForgotPasswordPage>,
+  },
+  {
+    path: "/stripe-checkout",
+    element: (
+      <Protected>
+        <StripeCheckout></StripeCheckout>
+      </Protected>
+    ),
   },
 ]);
 
