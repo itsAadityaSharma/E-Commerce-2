@@ -43,6 +43,7 @@ import ProductForm from "./features/admin/component/ProductForm.js";
 import AdminProductFormPage from "./pages/AdminProductFormPage.js";
 import AdminOrdersPage from "./pages/AdminOrdersPage.js";
 import StripeCheckout from "./pages/StripeCheckout.js";
+import RazorPayCheckOut from "./pages/RazorPayCheckOut.js";
 
 const router = createBrowserRouter([
   {
@@ -154,6 +155,14 @@ const router = createBrowserRouter([
     element: (
       <Protected>
         <StripeCheckout></StripeCheckout>
+      </Protected>
+    ),
+  },
+  {
+    path: "/razorpay-checkout",
+    element: (
+      <Protected>
+        <RazorPayCheckOut></RazorPayCheckOut>
       </Protected>
     ),
   },
